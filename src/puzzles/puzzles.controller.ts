@@ -20,7 +20,7 @@ export class PuzzlesController {
   @UseGuards(AuthGuard('jwt'))
   @Get()
   getPuzzles(@Request() req) {
-    return this.puzzleService.getPuzzle(req.user.id);
+    return this.puzzleService.getPuzzle(req.user.userId);
   }
 
   @Get(':id')

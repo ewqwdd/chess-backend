@@ -7,6 +7,7 @@ export class PuzzlesService {
   constructor(private prisma: PrismaService) {}
 
   async getPuzzle(userId: number) {
+    if (!userId) return null;
     const puzzle = await this.prisma.puzzle
       .findFirst({
         where: {
